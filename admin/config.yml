@@ -1,0 +1,2141 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    folder: cms/pages
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - &ref_0
+        label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - name: advisors
+    label: Advisors
+    folder: cms/advisors
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Bio
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_profile-picture
+        label: Profile Picture
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_bio-summary
+        label: Bio Summary
+        widget: text
+        required: false
+      - hint: ''
+        name: f_job-title
+        label: Job Title
+        widget: string
+        required: false
+      - hint: ''
+        name: f_linkedin
+        label: LinkedIn
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: advisors
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[advisors].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: technology_team
+    label: Technologies
+    folder: cms/technology-team
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Bio
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_profile-picture
+        label: Profile Picture
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_bio-summary
+        label: Bio Summary
+        widget: string
+        required: false
+      - hint: ''
+        name: f_job-title
+        label: Job Title
+        widget: string
+        required: false
+      - hint: ''
+        name: f_linkedin
+        label: LinkedIn
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: technology-team
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[technology-team].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: management_team
+    label: Managements
+    folder: cms/management-team
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Bio
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_profile-picture
+        label: Profile Picture
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_bio-summary
+        label: Bio Summary
+        widget: string
+        required: false
+      - hint: ''
+        name: f_job-title
+        label: Job Title
+        widget: string
+        required: false
+      - hint: ''
+        name: f_linkedin
+        label: LinkedIn
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: management-team
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[management-team].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - name: operations_team
+    label: Operations
+    folder: cms/operations-team
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - label: Bio
+        name: body
+        widget: markdown
+        required: false
+      - hint: ''
+        name: f_profile-picture
+        label: Profile Picture
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_bio-summary
+        label: Bio Summary
+        widget: string
+        required: false
+      - hint: ''
+        name: f_job-title
+        label: Job Title
+        widget: string
+        required: false
+      - hint: ''
+        name: f_linkedin
+        label: LinkedIn
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: operations-team
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[operations-team].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: 'Original text: Whitepaper, key: -78ddacdd'
+            label: Text
+            name: '-78ddacdd'
+            widget: string
+          - hint: 'Original text: Roadmap, key: -4b5115e4'
+            label: Text
+            name: '-4b5115e4'
+            widget: string
+          - hint: 'Original text: Hey Re:born Platform, key: e313b47'
+            label: Text
+            name: e313b47
+            widget: string
+          - hint: 'Original text: About Us, key: 645efc51'
+            label: Text
+            name: 645efc51
+            widget: string
+          - hint: 'Original text: #HEYREBORN, key: cde4d35'
+            label: Text
+            name: cde4d35
+            widget: string
+          - hint: >-
+              Original text: Your Trusted Concierge to Cosmetic Surgery, key:
+              -7b1ebefa
+            label: Text
+            name: '-7b1ebefa'
+            widget: string
+          - hint: "Original text: Hey\_Re:born leverages blockchain tech and ecosystem business model to enable consumers to identify, select, and transact with high-quality clinics &\_hospitals., key: -1d618f3d"
+            label: Text
+            name: '-1d618f3d'
+            widget: text
+          - hint: 'Original text: Read Whitepaper, key: 698b4fcd'
+            label: Text
+            name: 698b4fcd
+            widget: string
+          - hint: 'Original text: The Hey Re:born Difference, key: 398e37c0'
+            label: Text
+            name: 398e37c0
+            widget: string
+          - hint: >-
+              Original text: Hey Re:born Platform was created to address
+              challenges faced by both cosmetic surgery clinics and consumers.,
+              key: 12374ff5
+            label: Text
+            name: 12374ff5
+            widget: text
+          - hint: 'Original text: Transparency, key: -6bc56088'
+            label: Text
+            name: '-6bc56088'
+            widget: string
+          - hint: "Original text: No more pricing gimmicks, bait &\_switch promos, \_Re:born Platform enables users to get transparent pricing from top-end clinics and hospitals., key: c3bea46"
+            label: Text
+            name: c3bea46
+            widget: text
+          - hint: 'Original text: Quality, key: -75f6a721'
+            label: Text
+            name: '-75f6a721'
+            widget: string
+          - hint: >-
+              Original text: Re:born allows only vetted and licensed cosmetic
+              surgery clinics with plastic surgeons from Plastic Surgery
+              Association of South Korea to be on our platform. No other
+              unlicensed professionals., key: 71ff2186
+            label: Text
+            name: 71ff2186
+            widget: text
+          - hint: 'Original text: Trust, key: 4d54e38'
+            label: Text
+            name: 4d54e38
+            widget: string
+          - hint: >-
+              Original text: All reviews on our platform are vetted and
+              verified. No more fake reviews that plague the Internet. No more
+              relying on vague word-of-mouth recommendations., key: 7429255d
+            label: Text
+            name: 7429255d
+            widget: text
+          - hint: 'Original text: Hey Re:born Platform Ecosystem, key: 2c359b47'
+            label: Text
+            name: 2c359b47
+            widget: string
+          - hint: >-
+              Original text: Re:born is a merchant and consumer-facing platform
+              revolutionising the plastic surgery industry in Korea and
+              Southeast Asia., key: -4cbcb457
+            label: Text
+            name: '-4cbcb457'
+            widget: text
+          - hint: 'Original text: Communities, key: 2ea25227'
+            label: Text
+            name: 2ea25227
+            widget: string
+          - hint: "Original text: Hey Re:born platform captivates our users by enabling them to exchange &\_share information on various communities within the app., key: 1ed0653"
+            label: Text
+            name: 1ed0653
+            widget: text
+          - hint: 'Original text: Activity Points, key: -53b648ec'
+            label: Text
+            name: '-53b648ec'
+            widget: string
+          - hint: "Original text: Get rewarded with Points for in-app activities, enabling users to purchase products on Re:born Mall using points and swap to $RB\_Tokens., key: -6fe9b98f"
+            label: Text
+            name: '-6fe9b98f'
+            widget: text
+          - hint: 'Original text: Surgery Estimates, key: -1af6b860'
+            label: Text
+            name: '-1af6b860'
+            widget: string
+          - hint: "Original text: Three photos is all a user needs to request 100% accurate pricing for any cosmetic surgery procedures they want from all clinics &\_hospitals on\_Re:born Platform., key: 1551e43f"
+            label: Text
+            name: 1551e43f
+            widget: text
+          - hint: "Original text: RB\_Wallet, key: -10229777"
+            label: Text
+            name: '-10229777'
+            widget: string
+          - hint: "Original text: Easily access and manage off-chain Points and on-chain $RB\_Tokens. RB\_Wallet allows swapping between $RB\_Token and Points, and provides Staking feature for users who want additional benefits by holding $RB., key: 200c5674"
+            label: Text
+            name: 200c5674
+            widget: text
+          - hint: 'Original text: Re:born For Businesses, key: -5880318b'
+            label: Text
+            name: '-5880318b'
+            widget: string
+          - hint: >-
+              Original text: Re:born is not just for consumers to connect with
+              top-end plastic surgery clinics. We offer a suite of marketing and
+              advertising tools allowing cosmetic surgery hospitals, clinics,
+              and other advertisers to access our highly qualified and
+              captivated user base., key: -25483329
+            label: Text
+            name: '-25483329'
+            widget: text
+          - hint: 'Original text: Display Advertising, key: 458df886'
+            label: Text
+            name: 458df886
+            widget: string
+          - hint: "Original text: Run banner ads, pop-up ads, and sponsored listing to our highly-engaged &\_relevant audience with high purchase intent., key: -621ae68"
+            label: Text
+            name: '-621ae68'
+            widget: text
+          - hint: 'Original text: Automated CRM, key: -615f64d2'
+            label: Text
+            name: '-615f64d2'
+            widget: string
+          - hint: "Original text: Native CRM for businesses on Re:born Platform, offering powerful segmentation &\_marketing capabilities., key: -138c9fa4"
+            label: Text
+            name: '-138c9fa4'
+            widget: text
+          - hint: 'Original text: Push Notification Ads, key: 4e872421'
+            label: Text
+            name: '4e872421'
+            widget: string
+          - hint: >-
+              Original text: Our push notification ads enable brands on Re:born
+              platform to run direct-to-consumer campaigns., key: -4ebcf32d
+            label: Text
+            name: '-4ebcf32d'
+            widget: text
+          - hint: "Original text: Re:born\_Mall, key: -52374b3c"
+            label: Text
+            name: '-52374b3c'
+            widget: string
+          - hint: >-
+              Original text: eCommerce marketplace where merchants can setup
+              stores and sell beauty related products directly to our user
+              base., key: 65a13c07
+            label: Text
+            name: 65a13c07
+            widget: text
+          - hint: >-
+              Original text: Hey Re:born Ecosystem is planned to be developed
+              and expanded in three strategic phases. This approach allows us to
+              establish strong foundations, build each core components of
+              Re:born Ecosystem, and rapidly align our ecosystem user growth
+              with expansion plans., key: 7e76e14d
+            label: Text
+            name: 7e76e14d
+            widget: text
+          - hint: 'Original text: Read Full Roadmap, key: 5fe477d5'
+            label: Text
+            name: 5fe477d5
+            widget: string
+          - hint: 'Original text: Phase 1, key: 3ef732ac'
+            label: Text
+            name: 3ef732ac
+            widget: string
+          - hint: 'Original text: Phase 2, key: 3ef732ad'
+            label: Text
+            name: 3ef732ad
+            widget: string
+          - hint: 'Original text: Phase 3, key: 3ef732ae'
+            label: Text
+            name: 3ef732ae
+            widget: string
+          - hint: 'Original text: 2021 Q4 ~ 2022 Q1, key: 7b9a2726'
+            label: Text
+            name: 7b9a2726
+            widget: string
+          - hint: >-
+              Original text: Whitepaper 1.0, TGE, Private Sale, Kickstarted
+              Development., key: -6bd9c034
+            label: Text
+            name: '-6bd9c034'
+            widget: string
+          - hint: 'Original text: 2022 Q2, key: -5647fb9d'
+            label: Text
+            name: '-5647fb9d'
+            widget: string
+          - hint: "Original text: DEX\_Listing, Kickstarted Community Building, Partnerships Formation, key: -6803e76d"
+            label: Text
+            name: '-6803e76d'
+            widget: string
+          - hint: 'Original text: 2022 Q3, key: -5647fb9c'
+            label: Text
+            name: '-5647fb9c'
+            widget: string
+          - hint: "Original text: Hey Re:born Beta Release & v1 Launch, Advertising\_&\_Community Modules, key: 809361d"
+            label: Text
+            name: 809361d
+            widget: string
+          - hint: 'Original text: 2022 Q4, key: -5647fb9b'
+            label: Text
+            name: '-5647fb9b'
+            widget: string
+          - hint: "Original text: User Incentives &\_Activity Points System v1 Release, CEX\_Exchange Listing, key: -5d996c71"
+            label: Text
+            name: '-5d996c71'
+            widget: string
+          - hint: 'Original text: 2023 Q1, key: -5647873f'
+            label: Text
+            name: '-5647873f'
+            widget: string
+          - hint: "Original text: Smart Contract Audit, Whitepaper 2.0, Smart Contract Upgrades, RB\_Wallet Development, key: 1c395d65"
+            label: Text
+            name: 1c395d65
+            widget: string
+          - hint: 'Original text: 2023 Q2, key: -5647873e'
+            label: Text
+            name: '-5647873e'
+            widget: string
+          - hint: "Original text: Advertising Modules v2 Release, Kickstart Development of New\_Marketing Modules, Kickstart eCommerce Development, New CEX listing., key: 352717f2"
+            label: Text
+            name: 352717f2
+            widget: text
+          - hint: 'Original text: 2023 Q3, key: -5647873d'
+            label: Text
+            name: '-5647873d'
+            widget: string
+          - hint: >-
+              Original text: Launch Membership NFTs, Email Marketing Module
+              Release, Community v2 Release, RB Wallet Alpha, Hey Re:born
+              English Version, First Oversea Expansion, key: -137ee93e
+            label: Text
+            name: '-137ee93e'
+            widget: text
+          - hint: 'Original text: 2023 Q4, key: -5647873c'
+            label: Text
+            name: '-5647873c'
+            widget: string
+          - hint: "Original text: RB\_Wallet Beta, eCommerce Module Beta, Advertising Modules v3, CRM\_Beta, Metaverse Experiences with Partners, key: 39144d5"
+            label: Text
+            name: 39144d5
+            widget: text
+          - hint: 'Original text: 2024 Q1, key: -564712e0'
+            label: Text
+            name: '-564712e0'
+            widget: string
+          - hint: "Original text: RB\_Wallet v1, Advertising &\_Marketing Modules outside Korea, Second Oversea Expansion, key: 616bf202"
+            label: Text
+            name: 616bf202
+            widget: string
+          - hint: "Original text: 2024 Q2 AND\_BEYOND, key: -c580e89"
+            label: Text
+            name: '-c580e89'
+            widget: string
+          - hint: >-
+              Original text: More Oversea Expansions, Ecosystem Partners
+              Program, DAO, key: -943c889
+            label: Text
+            name: '-943c889'
+            widget: string
+          - hint: 'Original text: Our Users Love Us, key: 781605e0'
+            label: Text
+            name: '781605e0'
+            widget: string
+          - hint: 'Original text: Jennie Kim, key: 32b50dc6'
+            label: Text
+            name: 32b50dc6
+            widget: string
+          - hint: 'Original text: Customer, key: 27fbe3fe'
+            label: Text
+            name: 27fbe3fe
+            widget: string
+          - hint: >-
+              Original text: "Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+              commodo diam libero vitae erat. ", key: 4b70869e
+            label: Text
+            name: 4b70869e
+            widget: text
+          - hint: 'Original text: In Press, key: -6aa4f678'
+            label: Text
+            name: '-6aa4f678'
+            widget: string
+          - hint: 'Original text: Yahoo! Finance, key: -35bde165'
+            label: Text
+            name: '-35bde165'
+            widget: string
+          - hint: >-
+              Original text: Nam efficitur fringilla accumsan. Nullam nunc eros,
+              imperdiet id purus vel, suscipit auctor orci., key: 5930a819
+            label: Text
+            name: 5930a819
+            widget: text
+          - hint: 'Original text: By Someone, key: -a5405d7'
+            label: Text
+            name: '-a5405d7'
+            widget: string
+          - hint: 'Original text: 11/04/2023, key: 7c14053b'
+            label: Text
+            name: 7c14053b
+            widget: string
+          - hint: 'Original text: Blockonomi, key: -3ba03841'
+            label: Text
+            name: '-3ba03841'
+            widget: string
+          - hint: 'Original text: Yahoo! News, key: -3c2ee44e'
+            label: Text
+            name: '-3c2ee44e'
+            widget: string
+          - hint: 'Original text: Bloomberg, key: -3ff0bde5'
+            label: Text
+            name: '-3ff0bde5'
+            widget: string
+          - hint: 'Original text: BitcoinTalk, key: -669d9136'
+            label: Text
+            name: '-669d9136'
+            widget: string
+          - hint: >-
+              Original text: Nam efficitur fringilla accumsan. Nullam nunc eros,
+              imperdiet id purus vel, suscipit auctor orci. Suspendisse id
+              tellus euismod, blandit est a, varius sem. Aliquam nisl neque,
+              tempus eget consectetur vel, fringilla in metus. Aliquam laoreet
+              blandit aliquet. Phasellus dapibus vitae libero id euismod., key:
+              -c311b7c
+            label: Text
+            name: '-c311b7c'
+            widget: text
+          - hint: 'Original text: HeyReborn Platform, key: -7b7e4a65'
+            label: Text
+            name: '-7b7e4a65'
+            widget: string
+          - hint: >-
+              Original text: Copyright © Hey Reborn LLC. All rights reserved,
+              key: 69f6a98d
+            label: Text
+            name: 69f6a98d
+            widget: string
+          - hint: 'Original text: Token Info, key: 79533eb5'
+            label: Text
+            name: 79533eb5
+            widget: string
+          - hint: 'Original text: Hey Reborn, key: 7b881dc0'
+            label: Text
+            name: 7b881dc0
+            widget: string
+          - hint: 'Original text: #HEYRE:BORN, key: -718b55e9'
+            label: Text
+            name: '-718b55e9'
+            widget: string
+          - hint: "Original text: Charting Our\_Course:\_A\_Roadmap to the Future, key: -1be8615d"
+            label: Text
+            name: '-1be8615d'
+            widget: string
+          - hint: >-
+              Original text: Hey Re:born project will be developed and
+              implemented in three distinct phases. Discover how we are
+              revolutionising the plastic surgery industry by leveraging
+              cutting-edge technology, including blockchain and token economics,
+              to puts consumers in control., key: -af0f526
+            label: Text
+            name: '-af0f526'
+            widget: text
+          - hint: 'Original text: PHASE 1 - GENESIS, key: 2c65a021'
+            label: Text
+            name: 2c65a021
+            widget: string
+          - hint: 'Original text: 2021 Q4 to 2022 Q1, key: 467fac17'
+            label: Text
+            name: 467fac17
+            widget: string
+          - hint: >-
+              Original text: Phase 1 is all about laying strong foundations for
+              Hey Re:born Ecosystem, developing a robust product-market fit, and
+              gaining traction., key: 62ffec72
+            label: Text
+            name: 62ffec72
+            widget: text
+          - hint: 'Original text: Released Whitepaper v1.0, key: -611de469'
+            label: Text
+            name: '-611de469'
+            widget: string
+          - hint: 'Original text: Token Generation Event (TGE), key: -17af4788'
+            label: Text
+            name: '-17af4788'
+            widget: string
+          - hint: 'Original text: Pre-sale and Private Sale, key: -57f0bc64'
+            label: Text
+            name: '-57f0bc64'
+            widget: string
+          - hint: >-
+              Original text: Set vesting plan for pre-sale, private sale,
+              treasury, marketing, team, and advisors, key: 31ef5d11
+            label: Text
+            name: 31ef5d11
+            widget: string
+          - hint: 'Original text: Kickstarted Development, key: 5d7673d6'
+            label: Text
+            name: 5d7673d6
+            widget: string
+          - hint: "Original text: DEX\_Listing on PancakeSwap, key: -20727154"
+            label: Text
+            name: '-20727154'
+            widget: string
+          - hint: "Original text: Kickstarted Community Building &\_Growth, key: 56754391"
+            label: Text
+            name: '56754391'
+            widget: string
+          - hint: >-
+              Original text: Partnerships formed with top cosmetic surgery
+              clinics and hospitals, starting in Seoul, South Korea, key:
+              1f134f16
+            label: Text
+            name: 1f134f16
+            widget: text
+          - hint: "Original text: 🚀 HEY\_Re:born Platform Launched, key: 7852b66e"
+            label: Text
+            name: 7852b66e
+            widget: string
+          - hint: >-
+              Original text: Action packed quarter of 2022 saw us releasing beta
+              and version 1 of our platform within a month. We also released the
+              initial version of our much anticipated Advertising Module,
+              enabling all hospitals and clinics on Hey Re:born to run effective
+              advertising campaigns to our users., key: 572fbee9
+            label: Text
+            name: 572fbee9
+            widget: text
+          - hint: "Original text: (July)\_Released Hey Re:born Platform Beta in South Korea, key: a6761df"
+            label: Text
+            name: a6761df
+            widget: string
+          - hint: >-
+              Original text: (August) Released v1 of Hey Re:born Platform, key:
+              3461420c
+            label: Text
+            name: 3461420c
+            widget: string
+          - hint: 'Original text: Released Advertising Module (v1), key: -1abf23e5'
+            label: Text
+            name: '-1abf23e5'
+            widget: string
+          - hint: "Original text: Released Community Module\_(v1), key: -2ad026e0"
+            label: Text
+            name: '-2ad026e0'
+            widget: string
+          - hint: "Original text: 🚀 First CEX\_Listing, key: 1fcdc16d"
+            label: Text
+            name: 1fcdc16d
+            widget: string
+          - hint: "Original text: Released User Incentive and Rewards System (Activity Points)\_(v1), key: -27683ab2"
+            label: Text
+            name: '-27683ab2'
+            widget: string
+          - hint: 'Original text: Listed on Digifinex Exchange, key: -c1bf7f6'
+            label: Text
+            name: '-c1bf7f6'
+            widget: string
+          - hint: 'Original text: 🚀 Re:Born 2.0, key: -a69d939'
+            label: Text
+            name: '-a69d939'
+            widget: string
+          - hint: 'Original text: Conduct Smart Contract Audit, key: -2492afe0'
+            label: Text
+            name: '-2492afe0'
+            widget: string
+          - hint: 'Original text: Publish Whitepaper 2.0, key: -4fe6f1b8'
+            label: Text
+            name: '-4fe6f1b8'
+            widget: string
+          - hint: "Original text: Deploy Smart\_Contract\_Upgrade, key: 3d0075de"
+            label: Text
+            name: 3d0075de
+            widget: string
+          - hint: "Original text: Reduce Maximum Token\_Supply, key: 1eea1e30"
+            label: Text
+            name: 1eea1e30
+            widget: string
+          - hint: "Original text: Kickstart Development of RB\_Wallet (with Built-In Swapping and Staking Features), key: 7462e9a2"
+            label: Text
+            name: 7462e9a2
+            widget: string
+          - hint: >-
+              Original text: Release Hey Re:born Platform v1.5 with stability
+              improvements, key: -7c6cd550
+            label: Text
+            name: '-7c6cd550'
+            widget: string
+          - hint: 'Original text: PHASE 2 - METAMORPHOSIS, key: 24b3646b'
+            label: Text
+            name: 24b3646b
+            widget: string
+          - hint: >-
+              Original text: Phase 2 is about strengthening the platform
+              ecosystem, building out the rest of the core components and
+              value-added modules for businesses and consumers, and expansion
+              beyond South Korea., key: 4a1d9545
+            label: Text
+            name: 4a1d9545
+            widget: text
+          - hint: >-
+              Original text: Release v2 of the Advertising Module, key:
+              -573d036b
+            label: Text
+            name: '-573d036b'
+            widget: string
+          - hint: "Original text: Kickstart Development of Built-In CRM\_for Clinics and Hospitals on the\_Platform (Accessible via Staking), key: -2502f713"
+            label: Text
+            name: '-2502f713'
+            widget: text
+          - hint: "Original text: Kickstart Development of the Email\_Marketing Module, key: -5704aa7"
+            label: Text
+            name: '-5704aa7'
+            widget: string
+          - hint: >-
+              Original text: Kickstart Development of the eCommerce Component
+              (Re:born Mall), key: -7e631711
+            label: Text
+            name: '-7e631711'
+            widget: string
+          - hint: 'Original text: List on a Global Exchange, key: -56ed719e'
+            label: Text
+            name: '-56ed719e'
+            widget: string
+          - hint: 'Original text: 🚀 First Int''l Expansion, key: 1d9f90a6'
+            label: Text
+            name: 1d9f90a6
+            widget: string
+          - hint: "Original text: Launch Membership NFTs (for Staking\_Users), key: 1b39e09d"
+            label: Text
+            name: 1b39e09d
+            widget: string
+          - hint: "Original text: Release Email\_Marketing Module\_(v1)\_for Merchants\_(Clinics, Hospitals, and Brands), key: 3fa5f167"
+            label: Text
+            name: 3fa5f167
+            widget: string
+          - hint: "Original text: Release Community Module\_(v2)\_for Consumers, key: 40d2ec6f"
+            label: Text
+            name: 40d2ec6f
+            widget: string
+          - hint: "Original text: Release RB\_Wallet Alpha Version with Swapping Feature (Enabling Users to Swap Between $RB\_Tokens and Activity\_Points), key: 2988aee3"
+            label: Text
+            name: 2988aee3
+            widget: text
+          - hint: >-
+              Original text: Launch English version of Hey Re:born Platform,
+              key: 58be358b
+            label: Text
+            name: 58be358b
+            widget: string
+          - hint: "Original text: Expand into\_Indonesia Market with Localised Version of the Platform, key: -413b8095"
+            label: Text
+            name: '-413b8095'
+            widget: string
+          - hint: "Original text: 🚀 RB\_Wallet Beta Launch, key: -620c6fb1"
+            label: Text
+            name: '-620c6fb1'
+            widget: string
+          - hint: "Original text: Release RB\_Wallet (Beta)\_with Staking Feature Added, key: -279c630e"
+            label: Text
+            name: '-279c630e'
+            widget: string
+          - hint: >-
+              Original text: Launch Re:born Mal - eCommerce Component (Beta) ,
+              key: -7f3bf2c
+            label: Text
+            name: '-7f3bf2c'
+            widget: string
+          - hint: 'Original text: Release Advertising Module (v3), key: 2e9fe0e3'
+            label: Text
+            name: 2e9fe0e3
+            widget: string
+          - hint: "Original text: Release CRM\_(Beta) for Clinics and Hospitals, key: -71bfdff0"
+            label: Text
+            name: '-71bfdff0'
+            widget: string
+          - hint: >-
+              Original text: Launch Hey Re:born Metaverse Experiences on Partner
+              Metaverse Platforms, key: 73d0243f
+            label: Text
+            name: 73d0243f
+            widget: string
+          - hint: 'Original text: PHASE 3 - GROWTH, key: -4f1505b4'
+            label: Text
+            name: '-4f1505b4'
+            widget: string
+          - hint: 'Original text: 🚀 Second INt''l Expansion, key: -1a7437dc'
+            label: Text
+            name: '-1a7437dc'
+            widget: string
+          - hint: "Original text: Phase 3 is all about growth, expansion, and building partnerships in each country where\_Hey Re:born expands., key: 52ab23e0"
+            label: Text
+            name: 52ab23e0
+            widget: text
+          - hint: "Original text: Release RB\_Wallet (v1) with Full-Fledged Staking and Swapping Features, key: 5d79f739"
+            label: Text
+            name: 5d79f739
+            widget: string
+          - hint: >-
+              Original text: Launch Access to Advertising Modules to Businesses
+              outside South Korea, key: 19d69464
+            label: Text
+            name: 19d69464
+            widget: string
+          - hint: >-
+              Original text: Expand into Vietnam Market with Localised Version
+              of the Platform, key: 4529b05f
+            label: Text
+            name: 4529b05f
+            widget: string
+          - hint: "Original text: 2024 Q2 &\_BEYOND, key: -47115018"
+            label: Text
+            name: '-47115018'
+            widget: string
+          - hint: >-
+              Original text: Enter Thailand, Philippines, and Singapore Markets,
+              key: -6dda4940
+            label: Text
+            name: '-6dda4940'
+            widget: string
+          - hint: >-
+              Original text: Build Ecosystem Partnerships (Crypto and
+              Non-Crypto), key: -122ecb57
+            label: Text
+            name: '-122ecb57'
+            widget: string
+          - hint: 'Original text: Launch Governance DAO, key: -5afd23bf'
+            label: Text
+            name: '-5afd23bf'
+            widget: string
+          - hint: >-
+              Original text: Say Hello to Hey Re:born - Web3-Powered Plastic
+              Surgery Concierge Platform, key: 5aa98f4c
+            label: Text
+            name: 5aa98f4c
+            widget: string
+          - hint: >-
+              Original text: Phasellus luctus risus sed urna volutpat pulvinar.
+              Vivamus fermentum ante quis posuere blandit. , key: -7b2f8964
+            label: Text
+            name: '-7b2f8964'
+            widget: text
+          - hint: 'Original text: Lorem ipsum dolor sit amet, key: -734fd222'
+            label: Text
+            name: '-734fd222'
+            widget: string
+          - hint: >-
+              Original text: Phasellus luctus risus sed urna volutpat pulvinar.
+              Vivamus fermentum ante quis posuere blandit., key: 448ca04
+            label: Text
+            name: 448ca04
+            widget: text
+          - hint: 'Original text: Heading, key: -6d5fea1e'
+            label: Text
+            name: '-6d5fea1e'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique. , key:
+              -7d05bb15
+            label: Text
+            name: '-7d05bb15'
+            widget: text
+          - hint: 'Original text: Our users love us, key: -1ac1be00'
+            label: Text
+            name: '-1ac1be00'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra ornare, eros dolor interdum nulla., key:
+              73cb6d54
+            label: Text
+            name: 73cb6d54
+            widget: text
+          - hint: 'Original text: Contact, key: -64104400'
+            label: Text
+            name: '-64104400'
+            widget: string
+          - hint: >-
+              Original text: Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit. Suspendisse varius enim in eros elementum tristique. Duis
+              cursus, mi quis viverra ornare, eros dolor interdum nulla, ut
+              commodo diam libero vitae erat. , key: 16f681e6
+            label: Text
+            name: 16f681e6
+            widget: text
+          - hint: "Original text: Learn More About Hey Re:born and the\_Team, key: 3d20c58b"
+            label: Text
+            name: 3d20c58b
+            widget: string
+          - hint: 'Original text: The Team, key: 41aee8ec'
+            label: Text
+            name: 41aee8ec
+            widget: string
+          - hint: >-
+              Original text: Get to know the passionate team behind Hey Re:born
+              and learn about how they are shaping the industry to revolutionise
+              the plastic surgery industry and improve clinic-patient
+              relationships., key: -1344655b
+            label: Text
+            name: '-1344655b'
+            widget: text
+          - hint: 'Original text: Management, key: b885463'
+            label: Text
+            name: b885463
+            widget: string
+          - hint: 'Original text: Operations, key: 7711b40c'
+            label: Text
+            name: 7711b40c
+            widget: string
+          - hint: 'Original text: Technology, key: 12b9612c'
+            label: Text
+            name: 12b9612c
+            widget: string
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: 'Original text: Advisor, key: 1fc9f7a0'
+            label: Text
+            name: 1fc9f7a0
+            widget: string
+          - hint: 'Original text: Partner, key: 33f574a8'
+            label: Text
+            name: 33f574a8
+            widget: string
+          - hint: 'Original text: Get In Touch, key: -501935d2'
+            label: Text
+            name: '-501935d2'
+            widget: string
+          - hint: >-
+              Original text: Hi! Our friendly team would love to hear from you.
+              , key: 50d06029
+            label: Text
+            name: 50d06029
+            widget: string
+          - hint: "Original text: For all queries, we will strive to respond within 2 Business Days. Our Operation Hours are Monday to Friday, 9AM\_to 5PM\_(GMT+9)., key: -e0ad89e"
+            label: Text
+            name: '-e0ad89e'
+            widget: text
+          - hint: 'Original text: Name, key: 24eeab'
+            label: Text
+            name: 24eeab
+            widget: string
+          - hint: 'Original text: Email Address, key: -2b7010d0'
+            label: Text
+            name: '-2b7010d0'
+            widget: string
+          - hint: 'Original text: Message, key: -63dc6819'
+            label: Text
+            name: '-63dc6819'
+            widget: string
+          - hint: 'Original text: Send Email, key: 3a1a5504'
+            label: Text
+            name: 3a1a5504
+            widget: string
+          - hint: >-
+              Original text: Thank you! Your submission has been received!, key:
+              5a0ea5a1
+            label: Text
+            name: 5a0ea5a1
+            widget: string
+          - hint: >-
+              Original text: Oops! Something went wrong while submitting the
+              form., key: -7c112e99
+            label: Text
+            name: '-7c112e99'
+            widget: string
+          - hint: 'Original text: Protected Page, key: -11d4bbff'
+            label: Text
+            name: '-11d4bbff'
+            widget: string
+          - hint: 'Original text: Password, key: 4c641ebb'
+            label: Text
+            name: 4c641ebb
+            widget: string
+          - hint: >-
+              Original text: Incorrect password. Please try again., key:
+              -f5c4b5f
+            label: Text
+            name: '-f5c4b5f'
+            widget: string
+          - hint: 'Original text: 14-days free trial, key: -67424bdf'
+            label: Text
+            name: '-67424bdf'
+            widget: string
+          - hint: 'Original text: Chat and email support, key: -3b0d6de6'
+            label: Text
+            name: '-3b0d6de6'
+            widget: string
+          - hint: 'Original text: Access to all the features, key: 2a205194'
+            label: Text
+            name: 2a205194
+            widget: string
+          - hint: 'Original text: Get Started, key: -364d0a89'
+            label: Text
+            name: '-364d0a89'
+            widget: string
+          - hint: 'Original text: LinkedIn, key: 4b0ff13e'
+            label: Text
+            name: 4b0ff13e
+            widget: string
+          - hint: 'Original text: Our results in numbers, key: -42e91dd3'
+            label: Text
+            name: '-42e91dd3'
+            widget: string
+          - hint: 'Original text: 100,000, key: 74b317f5'
+            label: Text
+            name: 74b317f5
+            widget: string
+          - hint: 'Original text: +, key: 2b'
+            label: Text
+            name: 2b
+            widget: string
+          - hint: 'Original text: App Download, key: -26324419'
+            label: Text
+            name: '-26324419'
+            widget: string
+          - hint: 'Original text: 14,000, key: 568ef727'
+            label: Text
+            name: 568ef727
+            widget: string
+          - hint: 'Original text: Community Posts, key: 6a3b349c'
+            label: Text
+            name: 6a3b349c
+            widget: string
+          - hint: 'Original text: 15,000, key: 569d0ea8'
+            label: Text
+            name: 569d0ea8
+            widget: string
+          - hint: 'Original text: Active Members, key: -2af11e01'
+            label: Text
+            name: '-2af11e01'
+            widget: string
+          - hint: 'Original text: 100, key: bdf1'
+            label: Text
+            name: bdf1
+            widget: string
+          - hint: 'Original text: Hospitals, key: 466ae959'
+            label: Text
+            name: 466ae959
+            widget: string
+          - hint: >-
+              Original text: Don't just take our word for it – see what our
+              users have to say about their experiences with us! We're proud to
+              have a loyal following of satisfied users who trust us to help
+              them look and feel their best., key: -249a90ad
+            label: Text
+            name: '-249a90ad'
+            widget: text
+          - hint: 'Original text: I''m very impressed by Hey Re:born!, key: 59e31ee3'
+            label: Text
+            name: 59e31ee3
+            widget: string
+          - hint: >-
+              Original text: I underwent contouring, eye, nose, lifting
+              surgeries, and procedures at a clinic through Hey Reborn's quote
+              request service. The director and nursing staff were all very kind
+              and accommodating. The price was much more affordable through Hey
+              Reborn's quote request service than what I found on other apps,
+              and I am very satisfied with the results., key: -6bd0e07a
+            label: Text
+            name: '-6bd0e07a'
+            widget: text
+          - hint: 'Original text: Jenny Kim, key: 54fa230d'
+            label: Text
+            name: 54fa230d
+            widget: string
+          - hint: 'Original text: Very pleased with the outcome!, key: -5d722438'
+            label: Text
+            name: '-5d722438'
+            widget: string
+          - hint: >-
+              Original text: I had always been self-conscious about my nose,
+              square jawline, and chubby cheeks since I was young. I felt
+              stressed and unhappy with my appearance. I went to several plastic
+              surgery clinics for consultations, but I wasn't satisfied with the
+              results. I discovered Hey Reborn through a blog and decided to
+              sign up. The platform offered a quote that I couldn't find on
+              other apps. Hey Reborn connected me with a clinic that kindly
+              explained everything I didn't know before, and they recommended
+              procedures for my nose, facial contour, and fat transfer. The
+              price was reasonable, and I was pleased with the outcome. I'm
+              grateful to Hey Reborn for helping me live a new life., key:
+              622aef17
+            label: Text
+            name: 622aef17
+            widget: text
+          - hint: 'Original text: Olivia Kim, key: -5a6917ef'
+            label: Text
+            name: '-5a6917ef'
+            widget: string
+          - hint: 'Original text: Reborn helped me get great looks!, key: -ace860a'
+            label: Text
+            name: '-ace860a'
+            widget: string
+          - hint: >-
+              Original text: I found out about Hey Reborn through an
+              acquaintance's introduction. I heard a lot of comments from my
+              friends that my nose was low, so I decided to get a quote this
+              time. I chose a plastic surgery clinic with a reasonable price and
+              detailed explanation, and the staff were very kind in explaining
+              the detailed process. I was very satisfied with the changed
+              appearance after the surgery, and even my friends are
+              complimenting me on how good-looking I have become., key: 6f594e5c
+            label: Text
+            name: 6f594e5c
+            widget: text
+          - hint: 'Original text: Park Woo Sung, key: 6107c11a'
+            label: Text
+            name: 6107c11a
+            widget: string
+          - hint: "Original text: I\_can't thank Hey Reborn enough!, key: -5b6447bf"
+            label: Text
+            name: '-5b6447bf'
+            widget: string
+          - hint: >-
+              Original text: I had always been self-conscious about my small
+              eyes, and small & wide nose. However, thanks to a recommendation
+              from a friend, I discovered Hey Reborn's app and decided to take
+              advantage of an event they were hosting, which led me to choose a
+              reputable plastic surgery clinic. With their help, I underwent
+              surgery to enhance my facial contours, as well as my eyes and
+              nose. I was thrilled with the results and even ended up finding a
+              boyfriend afterwards! I can't thank Hey Reborn enough for the
+              positive changes they've brought to my life., key: 16a658ac
+            label: Text
+            name: 16a658ac
+            widget: text
+          - hint: 'Original text: Heoni Jei, key: 607603fb'
+            label: Text
+            name: 607603fb
+            widget: string
+          - hint: 'Original text: New life thanks to Hey Reborn!, key: 44140eef'
+            label: Text
+            name: 44140eef
+            widget: string
+          - hint: >-
+              Original text: I used to feel insecure about my appearance due to
+              my wide forehead and square jawline. It was a source of constant
+              stress for me until I came across Hey Reborn's advertisement and
+              decided to undergo cosmetic surgery. Through a price quote
+              request, I had a 3-point contouring procedure done at a reputable
+              clinic. The surgery went smoothly, and I am now living a new life
+              without any stress. Thank you so much!, key: 206dcd75
+            label: Text
+            name: 206dcd75
+            widget: text
+          - hint: 'Original text: Oseutin, key: 1d0fce65'
+            label: Text
+            name: 1d0fce65
+            widget: string
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: /, key: 2f'
+            label: Link
+            name: 2f
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+          - hint: 'Original link: /roadmap, key: 63cd8f2d'
+            label: Link
+            name: 63cd8f2d
+            widget: string
+          - hint: 'Original link: https://hey-reborn.com, key: 37f6286f'
+            label: Link
+            name: 37f6286f
+            widget: string
+          - hint: 'Original link: /about-us, key: -66ead1f3'
+            label: Link
+            name: '-66ead1f3'
+            widget: string
+          - hint: >-
+              Original link:
+              https://re-born.gitbook.io/hey-re-born-whitepaper-2.0/, key:
+              -7cd89db2
+            label: Link
+            name: '-7cd89db2'
+            widget: string
+          - hint: >-
+              Original link:
+              http://re-born.gitbook.io/hey-re-born-whitepaper-2.0/, key:
+              -7d94dbaf
+            label: Link
+            name: '-7d94dbaf'
+            widget: string
+          - hint: 'Original link: http://hey-reborn.com, key: -1c95498e'
+            label: Link
+            name: '-1c95498e'
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: i7d207f12
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '199335'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: b7bb4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i10b34e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 52a0591
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 7fe12735
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i40dc7a09
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i1a173f09
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 58a3f9a4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: i52bbc6ef
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-28f45a8b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-464f2fb9'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-62d1186e'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-6030cd32'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2749bce2
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 125f2fba
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-54b3c559'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5592f7ee
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3d2df8e4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 643f274e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 5a166155
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3c8b6b74'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-246dd860'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1746f50b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 48491d4b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3915bf4
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6ec2a055
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6ed0b7d6
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-4b4d0b9a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-4b3ef419'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7d41cb35'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3524e89f
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 3a3212f8
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2d1ecbfb
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 317f733b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: d73e975
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-430802d8'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 45f9b8ce
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 6c6d40a5
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4abef31c
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-137c0dad'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-7c0a2dce'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 122d3cf2
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 45279e3b
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 11aafa56
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-23212eb0'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-283fb88d'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4f64b1f5
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-2d5e426a'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+publish_mode: editorial_workflow
