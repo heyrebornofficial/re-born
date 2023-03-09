@@ -13,7 +13,7 @@ f_bio-summary: >-
 f_job-title: Chief Executive Officer
 f_profile-picture:
   url: >-
-    https://uploads-ssl.webflow.com/63f21ca6e1e45a5f474dde4b/63f8dc6375619d47803b3091_Luis%20kim.jpg
+    https://uploads-ssl.webflow.com/63f21ca6e1e45a5f474dde4b/6409951113f6c8f4a551bcdc_photo_2023-03-09%2015.13.01-p-500.jpeg
   alt: null
 slug: luis-kim
 updated-on: '2023-03-01T12:22:07.396Z'
