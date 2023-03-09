@@ -1301,9 +1301,9 @@ collections:
             label: Text
             name: '-42e91dd3'
             widget: string
-          - hint: 'Original text: 100,000, key: 74b317f5'
+          - hint: 'Original text: 75,000, key: 60da2262'
             label: Text
-            name: 74b317f5
+            name: 60da2262
             widget: string
           - hint: 'Original text: +, key: 2b'
             label: Text
@@ -1313,17 +1313,17 @@ collections:
             label: Text
             name: '-26324419'
             widget: string
-          - hint: 'Original text: 14,000, key: 568ef727'
+          - hint: 'Original text: 50,000, key: 5d29fb9f'
             label: Text
-            name: 568ef727
+            name: 5d29fb9f
             widget: string
           - hint: 'Original text: Community Posts, key: 6a3b349c'
             label: Text
             name: 6a3b349c
             widget: string
-          - hint: 'Original text: 15,000, key: 569d0ea8'
+          - hint: 'Original text: 20,000, key: 580b71c2'
             label: Text
-            name: 569d0ea8
+            name: 580b71c2
             widget: string
           - hint: 'Original text: Active Members, key: -2af11e01'
             label: Text
@@ -1351,13 +1351,14 @@ collections:
             widget: string
           - hint: >-
               Original text: I underwent contouring, eye, nose, lifting
-              surgeries, and procedures at a clinic through Hey Reborn's quote
-              request service. The director and nursing staff were all very kind
-              and accommodating. The price was much more affordable through Hey
-              Reborn's quote request service than what I found on other apps,
-              and I am very satisfied with the results., key: -6bd0e07a
+              surgeries, and procedures at Arc Plastic Surgery Clinicthrough Hey
+              Reborn's quote request service. The director and nursing staff
+              were all very kind and accommodating. The price was much more
+              affordable through Hey Reborn's quote request service than what I
+              found on other apps, and I am very satisfied with the results.,
+              key: 9d55b80
             label: Text
-            name: '-6bd0e07a'
+            name: 9d55b80
             widget: text
           - hint: 'Original text: Jenny Kim, key: 54fa230d'
             label: Text
@@ -1374,14 +1375,14 @@ collections:
               surgery clinics for consultations, but I wasn't satisfied with the
               results. I discovered Hey Reborn through a blog and decided to
               sign up. The platform offered a quote that I couldn't find on
-              other apps. Hey Reborn connected me with a clinic that kindly
-              explained everything I didn't know before, and they recommended
-              procedures for my nose, facial contour, and fat transfer. The
-              price was reasonable, and I was pleased with the outcome. I'm
-              grateful to Hey Reborn for helping me live a new life., key:
-              622aef17
+              other apps. Hey Reborn connected me with Arc Plastic Surgery
+              Clinic that kindly explained everything I didn't know before, and
+              they recommended procedures for my nose, facial contour, and fat
+              transfer. The price was reasonable, and I was pleased with the
+              outcome. I'm grateful to Hey Reborn for helping me live a new
+              life., key: -3a670e63
             label: Text
-            name: 622aef17
+            name: '-3a670e63'
             widget: text
           - hint: 'Original text: Olivia Kim, key: -5a6917ef'
             label: Text
@@ -1395,13 +1396,14 @@ collections:
               Original text: I found out about Hey Reborn through an
               acquaintance's introduction. I heard a lot of comments from my
               friends that my nose was low, so I decided to get a quote this
-              time. I chose a plastic surgery clinic with a reasonable price and
-              detailed explanation, and the staff were very kind in explaining
-              the detailed process. I was very satisfied with the changed
-              appearance after the surgery, and even my friends are
-              complimenting me on how good-looking I have become., key: 6f594e5c
+              time. I chose a plastic surgery clinic called Arc Plastic Surgery
+              with a reasonable price and detailed explanation, and the staff
+              were very kind in explaining the detailed process. I was very
+              satisfied with the changed appearance after the surgery, and even
+              my friends are complimenting me on how good-looking I have
+              become., key: -4d443e3c
             label: Text
-            name: 6f594e5c
+            name: '-4d443e3c'
             widget: text
           - hint: 'Original text: Park Woo Sung, key: 6107c11a'
             label: Text
@@ -1415,14 +1417,15 @@ collections:
               Original text: I had always been self-conscious about my small
               eyes, and small & wide nose. However, thanks to a recommendation
               from a friend, I discovered Hey Reborn's app and decided to take
-              advantage of an event they were hosting, which led me to choose a
-              reputable plastic surgery clinic. With their help, I underwent
-              surgery to enhance my facial contours, as well as my eyes and
-              nose. I was thrilled with the results and even ended up finding a
-              boyfriend afterwards! I can't thank Hey Reborn enough for the
-              positive changes they've brought to my life., key: 16a658ac
+              advantage of an event they were hosting, which led me to choose
+              Arc Plastic Surgery, a reputable plastic surgery clinic. With
+              their help, I underwent surgery to enhance my facial contours, as
+              well as my eyes and nose. I was thrilled with the results and even
+              ended up finding a boyfriend afterwards! I can't thank Hey Reborn
+              enough for the positive changes they've brought to my life., key:
+              1bebc575
             label: Text
-            name: 16a658ac
+            name: 1bebc575
             widget: text
           - hint: 'Original text: Heoni Jei, key: 607603fb'
             label: Text
@@ -1438,10 +1441,10 @@ collections:
               stress for me until I came across Hey Reborn's advertisement and
               decided to undergo cosmetic surgery. Through a price quote
               request, I had a 3-point contouring procedure done at a reputable
-              clinic. The surgery went smoothly, and I am now living a new life
-              without any stress. Thank you so much!, key: 206dcd75
+              clinic named Arc. The surgery went smoothly, and I am now living a
+              new life without any stress. Thank you so much!, key: 70017ca0
             label: Text
-            name: 206dcd75
+            name: 70017ca0
             widget: text
           - hint: 'Original text: Oseutin, key: 1d0fce65'
             label: Text
@@ -1476,11 +1479,25 @@ collections:
             name: '-66ead1f3'
             widget: string
           - hint: >-
+              Original link: https://medium.com/@heyrebornofficial, key:
+              -1bc215c5
+            label: Link
+            name: '-1bc215c5'
+            widget: string
+          - hint: >-
               Original link:
               https://re-born.gitbook.io/hey-re-born-whitepaper-2.0/, key:
               -7cd89db2
             label: Link
             name: '-7cd89db2'
+            widget: string
+          - hint: 'Original link: https://twitter.com/Re_bornofficial, key: 56111ae8'
+            label: Link
+            name: 56111ae8
+            widget: string
+          - hint: 'Original link: https://t.me/RebornOfficialgroup, key: 5a07314a'
+            label: Link
+            name: 5a07314a
             widget: string
           - hint: >-
               Original link:
@@ -1633,6 +1650,45 @@ collections:
                 required: false
           - label: Image
             name: '-28f45a8b'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 48bffe6f
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2b0a21b0
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 73d95bca
             widget: object
             fields:
               - name: url
