@@ -17,6 +17,6 @@ layout: '[technology-team].html'
 tags: technology-team
 ---
 
-Shim Min-seop is a product designer with a master's degree from Kyunghee University. He has previously worked as a Design Planning Director at BD Partners Co., Ltd. and a design team leader at OMA IT division. He is currently the Lead Product Designer of Hey Re:born and a judge for the Post Office Design Contest. He has also previously worked as a Responsive Designer at Crypto Solutions.  
+Shim Min-seop is a previously worked as a Design Planning Director at BD Partners Co., Ltd. and a design team leader at OMA IT division. He is currently the Lead Product Designer of Hey Re:born and a judge for the Post Office Design Contest. He has also previously worked as a Responsive Designer at Crypto Solutions.  
 
 ‍
