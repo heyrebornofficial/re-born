@@ -1,5 +1,5 @@
 ---
-f_linkedin: https://www.linkedin.com/in/seunghyun-kim-44b50b262/
+f_linkedin: https://www.linkedin.com/in/jacob-kim-127788208/ 
 title: Kim Seung Hyun
 f_bio-summary: >-
   Kim Seung Hyun is a seasoned professional with extensive experience in app
