@@ -1,4 +1,6 @@
 ---
+f_linkedin: https://www.linkedin.com/in/%EC%9A%A9%EC%9E%AC-%EC%95%88-390950179/ 
+title: Ahn yong jae
 f_bio-summary: >-
   Yongjae Anh is the CTO at Hey Reborn, bringing over two decades of experience
   in software development and IT management.
