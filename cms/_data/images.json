@@ -167,6 +167,22 @@
     "url": "/assets/images/vimeo.png",
     "alt": ""
   },
+  "-4679763c": {
+    "url": "/assets/images/group-1.png",
+    "alt": "Company logo"
+  },
+  "-38895faa": {
+    "url": "/assets/images/bentley-logo.png",
+    "alt": "Company logo"
+  },
+  "4cede63b": {
+    "url": "/assets/images/2021_nuls_logo_w_blk-01.png",
+    "alt": "NULS Blockchain"
+  },
+  "-4d2b1d1d": {
+    "url": "/assets/images/uniramp.png",
+    "alt": "Company logo"
+  },
   "4abef31c": {
     "url": "https://d3e54v103j8qbb.cloudfront.net/static/utility-lock.ae54711958.svg",
     "alt": ""
@@ -206,5 +222,33 @@
   "-2d5e426a": {
     "url": "/assets/images/photo_2023-03-03-23.09.01.jpeg",
     "alt": ""
+  },
+  "563ae072": {
+    "url": "/assets/images/coinbase.svg",
+    "alt": "Company logo"
+  },
+  "56ba20d6": {
+    "url": "/assets/images/spotify.svg",
+    "alt": "Company logo"
+  },
+  "68d6b02c": {
+    "url": "/assets/images/slack.svg",
+    "alt": "Company logo"
+  },
+  "-7c9c4268": {
+    "url": "/assets/images/dropbox.svg",
+    "alt": "Company logo"
+  },
+  "-5cb2e762": {
+    "url": "/assets/images/webflow.svg",
+    "alt": "Company logo"
+  },
+  "-6e6d441d": {
+    "url": "/assets/images/zoom.svg",
+    "alt": "Company logo"
+  },
+  "-2f64b98c": {
+    "url": "/assets/images/contentful.svg",
+    "alt": "Company logo"
   }
 }
